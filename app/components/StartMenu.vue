@@ -33,43 +33,45 @@ const apps = [
 </script>
 
 <template>
-    <AnimatePresence>
-        <Motion
-            v-if="windowStore.isStartMenuOpen"
-            ref="menuRef"
-            :initial="{ y: 50, opacity: 0, scale: 0.95 }"
-            :animate="{ y: 0, opacity: 1, scale: 1 }"
-            :exit="{ y: 50, opacity: 0, scale: 0.95 }"
-            :transition="{ type: 'spring', stiffness: 300, damping: 22 }"
-            class="fixed bottom-30 left-1/2 -translate-x-1/2 w-[90%] max-w-md p-6 rounded-2xl bg-linear-to-br from-blue-900/30 via-slate-900/60 to-black/70 bg-white/20 backdrop-blur-lg z-40 text-white"
-        >
-            <h3 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">
-                Compétences & Outils
-            </h3>
-
-            <div class="grid grid-cols-3 gap-4">
-                <button
-                    v-for="app in apps"
-                    :key="app.name"
-                    class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-white/10 transition-colors duration-200 group cursor-pointer"
+    <ClientOnly>
+            <AnimatePresence>
+                <Motion
+                    v-if="windowStore.isStartMenuOpen"
+                    ref="menuRef"
+                    :initial="{ y: 50, opacity: 0, scale: 0.95 }"
+                    :animate="{ y: 0, opacity: 1, scale: 1 }"
+                    :exit="{ y: 50, opacity: 0, scale: 0.95 }"
+                    :transition="{ type: 'spring', stiffness: 300, damping: 22 }"
+                    class="fixed bottom-30 left-1/2 -translate-x-1/2 w-[90%] max-w-md p-6 rounded-2xl bg-linear-to-br from-blue-900/30 via-slate-900/60 to-black/70 bg-white/20 backdrop-blur-lg z-40 text-white"
                 >
-                    <div class="rounded-xl mb-2 transition-transform duration-200 group-hover:scale-110">
-                        <UIcon
-                            v-if="app.type === 'icon'"
-                            :name="app.icon"
-                            class="w-7 h-7 text-white"
-                        />
+                    <h3 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">
+                        Compétences & Outils
+                    </h3>
 
-                        <img
-                            v-else
-                            :src="app.icon"
-                            :alt="app.name"
-                            class="w-7 h-7"
-                        />
+                    <div class="grid grid-cols-3 gap-4">
+                        <button
+                            v-for="app in apps"
+                            :key="app.name"
+                            class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-white/10 transition-colors duration-200 group cursor-pointer"
+                        >
+                            <div class="rounded-xl mb-2 transition-transform duration-200 group-hover:scale-110">
+                                <UIcon
+                                    v-if="app.type === 'icon'"
+                                    :name="app.icon"
+                                    class="w-7 h-7 text-white"
+                                />
+
+                                <img
+                                    v-else
+                                    :src="app.icon"
+                                    :alt="app.name"
+                                    class="w-7 h-7"
+                                />
+                            </div>
+                            <span class="text-xs text-slate-200 text-center font-medium">{{ app.name }}</span>
+                        </button>
                     </div>
-                    <span class="text-xs text-slate-200 text-center font-medium">{{ app.name }}</span>
-                </button>
-            </div>
-        </Motion>
-    </AnimatePresence>
+                </Motion>
+            </AnimatePresence>
+    </ClientOnly>
 </template>

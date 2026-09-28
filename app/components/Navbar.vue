@@ -22,31 +22,31 @@ const windowStore = useWindowStore();
             />
         </button>
 
-        <button
-            @click="activeIndex = 1"
-            :class="[
-                'relative p-2.5 rounded-xl flex items-center justify-center transition-colors duration-300 hover:bg-white/10 active:scale-95 cursor-pointer',
-                activeIndex === 1 ? 'bg-white/10' : 'bg-white/0'
-            ]"
-        >
-            <UIcon
-                name="i-heroicons-folder-16-solid"
-                class="w-10 h-10 bg-[#f8c336]"
-            />
-        </button>
+<!--        <button-->
+<!--            @click="activeIndex = 1"-->
+<!--            :class="[-->
+<!--                'relative p-2.5 rounded-xl flex items-center justify-center transition-colors duration-300 hover:bg-white/10 active:scale-95 cursor-pointer',-->
+<!--                activeIndex === 1 ? 'bg-white/10' : 'bg-white/0'-->
+<!--            ]"-->
+<!--        >-->
+<!--            <UIcon-->
+<!--                name="i-heroicons-folder-16-solid"-->
+<!--                class="w-10 h-10 bg-[#f8c336]"-->
+<!--            />-->
+<!--        </button>-->
 
-        <button
-            @click="activeIndex = 2"
-            :class="[
-                'relative p-2.5 rounded-xl flex items-center justify-center transition-colors duration-300 hover:bg-white/10 active:scale-95 cursor-pointer',
-                activeIndex === 2 ? 'bg-white/10' : 'bg-white/0'
-            ]"
-        >
-            <UIcon
-                name="i-heroicons-document-text-16-solid"
-                class="w-10 h-10 bg-[#90caf9]"
-            />
-        </button>
+<!--        <button-->
+<!--            @click="activeIndex = 2"-->
+<!--            :class="[-->
+<!--                'relative p-2.5 rounded-xl flex items-center justify-center transition-colors duration-300 hover:bg-white/10 active:scale-95 cursor-pointer',-->
+<!--                activeIndex === 2 ? 'bg-white/10' : 'bg-white/0'-->
+<!--            ]"-->
+<!--        >-->
+<!--            <UIcon-->
+<!--                name="i-heroicons-document-text-16-solid"-->
+<!--                class="w-10 h-10 bg-[#90caf9]"-->
+<!--            />-->
+<!--        </button>-->
     </div>
 </template>
 
